@@ -8,7 +8,12 @@ module.exports = {
   darkMode: false,
   theme: {
     extend: {},
-    
+    colors: { 
+      primary: '#114b5f',
+      second: '#caf1ff',
+      fundo: '#eee',
+      red: 'red',
+    } 
   },
   plugins: [],
 }
