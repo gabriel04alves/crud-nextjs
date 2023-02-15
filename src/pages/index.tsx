@@ -1,6 +1,9 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
+import React, { Component } from 'react';
+import Icon from '@mdi/react';
+import { mdilAccount } from '@mdi/light-js';
 import styles from '@/styles/Home.module.css'
 import Layout from '@/components/Layout'
 import Tabela from '@/components/Tabela'
@@ -16,13 +19,23 @@ export default function Home() {
     new Cliente('Vagner', 'vagner@gmail.com', 'Joinville SC', 37, '3'),
   ]
 
+  function clienteSelecionado(cliente: Cliente){
+    console.log(cliente.nome)
+  }
+  function clienteExcluido(cliente: Cliente){
+    console.log(cliente.nome)
+  }
+
   return (
     <div className={`
       flex justify-center items-center h-screen
       bg-fundo text-primary-default
     `}>
       <Layout titulo="Cadastro Simples">
-        <Tabela clientes={clientes}></Tabela> 
+        <Tabela clientes={clientes} 
+          clienteSelecionado={clienteSelecionado}
+          clienteExcluido={clienteExcluido}
+        /> 
       </Layout>      
     </div>
   )
