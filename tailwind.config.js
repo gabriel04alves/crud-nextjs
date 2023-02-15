@@ -9,8 +9,15 @@ module.exports = {
   theme: {
     extend: {},
     colors: { 
-      primary: '#114b5f',
-      second: '#caf1ff',
+      primary: {
+        100: '#CBEBF6',
+        200: '#62C4E4',
+        300: '#40B6DD',
+        400: '#1C7C9C',
+        500: '#186E8B',
+        default: '#114b5f',
+        second: '#caf1ff,'
+      },
       fundo: '#eee',
       red: 'red',
     } 

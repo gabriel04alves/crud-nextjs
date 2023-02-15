@@ -19,7 +19,7 @@ export default function Home() {
   return (
     <div className={`
       flex justify-center items-center h-screen
-      bg-fundo text-primary
+      bg-fundo text-primary-default
     `}>
       <Layout titulo="Cadastro Simples">
         <Tabela clientes={clientes}></Tabela> 
