@@ -8,6 +8,7 @@ import styles from '@/styles/Home.module.css'
 import Layout from '@/components/Layout'
 import Tabela from '@/components/Tabela'
 import Cliente from '@/core/Cliente'
+import Botao from '@/components/Botao';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -32,6 +33,9 @@ export default function Home() {
       bg-fundo text-primary-default
     `}>
       <Layout titulo="Cadastro Simples">
+        <div className="flex">
+          <Botao className='mb-4'>Novo Cliente</Botao>
+        </div>
         <Tabela clientes={clientes} 
           clienteSelecionado={clienteSelecionado}
           clienteExcluido={clienteExcluido}

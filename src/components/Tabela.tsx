@@ -47,7 +47,7 @@ export default function Tabela(props: TabelaProps) {
                 {props.clienteSelecionado ? (
                 <button onClick={() => props.clienteSelecionado?.(cliente)} className={`
                     flex justify-center items-center
-                    rounded-full hover:translate-x-1 m-1
+                    rounded-full hover:translate-x-1 hover:-translate-y-1 m-1
                 `}>
                     <Icon path={mdilPencil} size={1.2} color={'#114b5f'}/>
                 </button>
@@ -55,7 +55,7 @@ export default function Tabela(props: TabelaProps) {
                 {props.clienteExcluido ? (
                 <button onClick={() => props.clienteExcluido?.(cliente)} className={`
                     flex justify-center items-center
-                    rounded-full hover:translate-x-1 m-1
+                    rounded-full hover:translate-x-1 hover:-translate-y-1  m-1
                 `}>
                     <Icon path={mdilDelete} size={1.2} color={'red'}/>
                 </button>
