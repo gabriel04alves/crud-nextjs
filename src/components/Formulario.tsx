@@ -7,7 +7,8 @@ import { mdilAccount, mdilPlus, mdilCancel, mdilContentSaveAll } from '@mdi/ligh
 
 interface FormularioProps {
     cliente: Cliente
-
+    clienteMudou?: (cliente: Cliente) => void
+    cancelado?: () => void
 }
 
 export default function Formulario(props: FormularioProps) {
@@ -27,10 +28,10 @@ export default function Formulario(props: FormularioProps) {
             <Entrada texto='Cidade' tipo='text' valor={local} valorMudou={setLocal}/>
             <Entrada texto='Idade' tipo='number' valor={idade} valorMudou={setIdade}/>
             <div className="flex mt-3 justify-end mr-10">
-                <Botao className="outline-verde-500 text-verde-500 mr-4" >
+                <Botao onClick={() => props.clienteMudou?.(new Cliente(nome, email, local, +idade, id))} className="outline-verde-500 text-verde-500 mr-4" >
                     <Icon path={mdilContentSaveAll } size={1} /> {id ? 'Alterar' : 'Salvar'} 
                 </Botao>
-                <Botao className="outline-red text-red">
+                <Botao onClick={props.cancelado} className="outline-red text-red">
                     <Icon path={mdilCancel} size={1} />Cancelar
                 </Botao>
             </div>
