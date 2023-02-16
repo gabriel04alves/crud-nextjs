@@ -17,6 +17,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   
+  const [cliente, setCliente] = useState<Cliente>(Cliente.vazio())
   const [visivel, setVisivel] = useState<'tabela' | 'form'>('tabela')
   
   const clientes = [
@@ -26,13 +27,19 @@ export default function Home() {
   ]
 
   function clienteSelecionado(cliente: Cliente){
-    console.log(cliente.nome)
+    setCliente(cliente)
+    setVisivel('form')
   }
   function clienteExcluido(cliente: Cliente){
     console.log(cliente.nome)
   }
   function salvarCliente(cliente: Cliente) {
     console.log(cliente)
+    setVisivel('tabela')
+  }
+  function novoCliente() {
+    setCliente(Cliente.vazio())
+    setVisivel('form')
   }
 
   return (
@@ -44,7 +51,7 @@ export default function Home() {
         {visivel === 'tabela' ? (
           <>
             <div className="flex">
-              <Botao onClick={() => setVisivel('form')} className='mb-4' 
+              <Botao onClick={novoCliente} className='mb-4' 
               cor='primary-400'> 
                 <Icon path={mdilPlus} size={1} color={'#FFF'} /> Novo Cliente
               </Botao>
@@ -56,7 +63,7 @@ export default function Home() {
           </>
         ) : (
           <Formulario
-            cliente={clientes[0]}
+            cliente={cliente}
             clienteMudou={salvarCliente}
             cancelado={() => setVisivel('tabela')}
           />
