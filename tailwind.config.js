@@ -16,11 +16,18 @@ module.exports = {
         400: '#1C7C9C',
         500: '#186E8B',
         default: '#114b5f',
-        second: '#caf1ff,'
+        second: '#caf1ff'
       },
       fundo: '#eee',
+      fundob: '#e1e1e1',
       red: 'red',
+      delete: '#FF0000',
+      verde: {
+        500: '#22C55E',
+      },
     } 
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms'),
+  ],
 }

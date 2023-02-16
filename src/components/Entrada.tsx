@@ -1,0 +1,29 @@
+interface EntradaProps {
+    tipo: 'text' | 'number'
+    texto: string 
+    valor: any
+    somenteLeitura?: boolean
+    className?: string
+    valorMudou?: (valor: any) => void
+}
+
+export default function Entrada(props: EntradaProps) {
+    return (
+        <div className={`flex flex-col $props.className`}>
+            <label className="mt-3"> 
+                {props.texto}
+            </label>
+            <input 
+                type={props.tipo ?? 'text'}
+                value={props.valor} 
+                readOnly={props.somenteLeitura}
+                onChange={e => props.valorMudou?.(e.target.value)}
+                className={`
+                    border border-primary-300 rounded-md bg-fundo
+                    text-primary-default form-text px-4 my-1
+                    focus:outline-none ${props.somenteLeitura ? ' ' : 'focus:bg-fundob'}
+                `} 
+            />
+        </div>
+    )
+}
