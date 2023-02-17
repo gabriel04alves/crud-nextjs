@@ -1,18 +1,11 @@
-import Head from 'next/head'
-import Image from 'next/image'
 import { Inter } from '@next/font/google'
-import React, { Component, useEffect } from 'react';
+import React from 'react';
 import Icon from '@mdi/react';
-import { mdilAccount, mdilPlus } from '@mdi/light-js';
-import styles from '@/styles/Home.module.css'
+import { mdilPlus } from '@mdi/light-js';
 import Layout from '@/components/Layout'
 import Tabela from '@/components/Tabela'
-import Cliente from '@/core/Cliente'
 import Botao from '@/components/Botao';
 import Formulario from '@/components/Formulario';
-import { useState } from "react";
-import ClienteRepositorio from '@/core/ClienteRepositorio';
-import ColecaoCliente from 'backend/db/ColecaoCliente';
 import useClientes from '@/hooks/useClientes';
 
 
@@ -36,7 +29,9 @@ export default function Home() {
       flex justify-center items-center h-screen
       bg-fundo text-primary-default
     `}>
-      <Layout titulo="Cadastro Simples">
+      <title>CRUD</title>
+      <link rel="icon" href="/crud-next/public/logobranco.png" />
+      <Layout titulo="CRUD usando NextJS">
         {tabelaVisivel ? (
           <>
             <div className="flex">

@@ -3,7 +3,7 @@ import { useState } from "react"
 import Entrada from "./Entrada"
 import Botao from "./Botao"
 import Icon from '@mdi/react';
-import { mdilAccount, mdilPlus, mdilCancel, mdilContentSaveAll } from '@mdi/light-js';
+import {  mdilCancel, mdilContentSaveAll } from '@mdi/light-js';
 
 interface FormularioProps {
     cliente: Cliente

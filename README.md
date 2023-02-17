@@ -1,4 +1,4 @@
-# CRUD usando Next.js
+# CRUD usando Next.js e Firebase
 CRUD: Create, Read, Update and Delete
 #
 Base: https://github.com/cod3rcursos/next-crud
